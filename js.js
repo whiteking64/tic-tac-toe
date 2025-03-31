@@ -322,7 +322,6 @@ function makePlayerO() {
     document.getElementById("noBtn").removeEventListener("click", makePlayerO);
 }
 
-// executed when player clicks one of the table cells
 function cellClicked(id) {
     // The last character of the id corresponds to the numeric index in Grid.cells:
     var idName = id.toString();
@@ -332,7 +331,8 @@ function cellClicked(id) {
         return false;
     }
     moves += 1;
-    document.getElementById(id).innerHTML = "playerText";
+    // FIX: Changed "playerText" string to the variable playerText
+    document.getElementById(id).innerHTML = playerText;
     // randomize orientation (for looks only)
     var rand = Math.random();
     if (rand < 0.3) {
